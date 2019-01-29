@@ -1,0 +1,48 @@
+@import '~@angular/material/theming';
+@import 'config';
+
+
+@include mat-core();
+
+
+$my-theme-primary: mat-palette($mat-indigo);
+$my-theme-accent:  mat-palette($mat-pink, A200, A100, A400);
+$my-theme-warn:    mat-palette($mat-red);
+
+$my-theme: mat-light-theme($my-theme-primary, $my-theme-accent, $my-theme-warn);
+
+@include angular-material-theme($my-theme);
+
+
+.mat-drawer-container{
+    @include background();
+    background: $primary-color;
+    color: #fff;
+    height: 100%;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.5;
+}
+
+.mat-toolbar.mat-primary{
+    background: $primary-color;
+    color: #444;
+}
+
+a.mat-list-item{
+    .active{
+        background: $secondary-color;
+    }
+}
+
+.mat-list-item-content {
+    &:hover{
+        background: $secondary-color;
+    }
+
+    
+}
+
+ul{
+    padding: 0;
+}

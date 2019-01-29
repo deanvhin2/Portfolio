@@ -1,0 +1,47 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport="true"
+      [ngClass]="{hidden: !(isHandset$ | async)}"
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="!(isHandset$ | async)">
+      <div class="potrait"></div>
+    <mat-toolbar class="nav-branding">
+      Dean Photograph
+    </mat-toolbar>
+    <mat-nav-list>
+      <ul>
+        <li><a routerLinkActive="active" mat-list-item routerLink="home">Home</a></li>
+        <li><a routerLinkActive="active" mat-list-item routerLink="about">About Me</a></li>
+        <li><a routerLinkActive="active" mat-list-item routerLink="work">My Work</a></li>
+        <li><a routerLinkActive="active" mat-list-item routerLink="contact">Contact</a></li>
+      </ul>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    
+    <mat-toolbar color="primary">
+        <app-menu [ngClass]="{hidden: (isHandset$ | async)}"></app-menu>
+      <button
+      type="button"
+      aria-label="Toggle sidenav"
+      mat-icon-button
+      (click)="drawer.toggle()"
+      *ngIf="isHandset$ | async">
+      <i aria-label="Side nav toggle" class="material-icons md-48">
+          menu
+          </i>
+    </button>
+    <div [ngClass]="{hidden: !(isHandset$ | async)}" class="logo-nav" >
+      Dean Photograph
+    </div>
+    <a href=""><span [ngClass]="{hidden: (isHandset$ | async)}"> Dean-Photograph </span></a>
+    <div class="spacer"></div>
+
+        
+        <app-header [ngClass]="{hidden: (isHandset$ | async)}"></app-header>
+      </mat-toolbar>
+      <ng-content></ng-content>
+      
+      <app-footer [ngClass]="{hidden: !(isHandset$ | async)}"></app-footer>
+    </mat-sidenav-content>
+  </mat-sidenav-container>

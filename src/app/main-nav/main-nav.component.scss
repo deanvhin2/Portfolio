@@ -1,0 +1,45 @@
+@import "./../../assets/sass/config";
+@import url('https://fonts.googleapis.com/css?family=Baloo+Thambi');
+
+.sidenav-container {
+  height: 100%;
+}
+
+.sidenav {
+  width: 250px;
+  flex: 1 1 auto;
+  color: #fff;
+}
+
+.sidenav .mat-toolbar {
+  padding: 155px 0 0 45px;
+  background: $primary-color;
+  height: 200px;
+  font-family: 'Baloo Thambi', cursive;
+  color: #fff;
+
+  
+}
+
+.mat-toolbar.mat-primary {
+  position: fixed;
+  top: 0;
+  padding: 0;
+  z-index: 2;
+}
+
+.hidden {
+  display: none;
+}
+
+.potrait {
+    position: absolute;  
+    top: 10px;
+    left: 45px;
+    width: 150px;
+    height: 150px;
+    background: url('./../../assets/img/potrait_sm.jpg');
+    border-radius: 50%;
+    border: solid 3px $secondary-color; 
+
+}
